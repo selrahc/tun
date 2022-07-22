@@ -25,8 +25,9 @@ func newServer(conf string) (s *tunServer, err error) {
 	}
 
 	sec := cfg.Section("tuns")
-	addr := sec.Key("addr").MustString(":7000")
-	http := sec.Key("http").MustString(":7070")
+	addr := sec.Key("addr").MustString(":1214")
+	http := ""
+	//http := sec.Key("http").MustString(":7070")
 
 	s = &tunServer{proxies: cfg}
 	svr, err := server.Listen(&server.Config{
